@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Edu NSW ACT Foundation", cursive;
+  src: url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&display=swap');
+}
+
+* {
+  box-sizing: border-box;
+  color: black !important;
+  font-family: 'Edu NSW ACT Foundation', cursive;
+}
+
+.primary-color {
+  color: #6902DF !important;
+}
+.primary-bg {
+  background-color: #6902DF !important;
+  color: white !important;
+}
+
+.main-logo__container {
+  width: 33%;
+}
+
+.main-logo__img {
+  width: 30%;
+}
+.main-img__container {
+  text-align: center;
+}
