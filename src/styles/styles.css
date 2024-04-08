@@ -44,8 +44,9 @@ nav {
   min-width: 200ox;
 }
 .main-logo__img {
-  width: 30%;
-  min-width: 15vh;
+  width: 10%;
+  margin-left: 1rem;
+  transform: rotate(35deg);
 }
 
 .main-img {
@@ -63,4 +64,40 @@ nav {
 
 li::marker {
   color: #6902DF;
+}
+
+.categories__container {
+  margin: auto;
+  display: flex;
+  width: 70%;
+  height: 400px;
+}
+.categories__container .category {
+  height: 100%;
+  flex-grow: 1;
+  position: relative;
+}
+.categories__container .category__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.8;
+  transition: ease;
+}
+.categories__container .category__img:hover {
+  width: 400px;
+  opacity: 1;
+  filter: contrast(1.2);
+}
+.categories__container .category__img:hover + .category__name {
+  background-color: #6902DF;
+  color: white !important;
+  text-align: center;
+}
+.categories__container .category__name {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  padding: 2%;
 }/*# sourceMappingURL=styles.css.map */
