@@ -1,4 +1,4 @@
-const PRODUCTS_BY_CATEGORY = {
+export const PRODUCTS_BY_CATEGORY = {
 
   alcancias: [
       {name: "Bolsa de Dinero", img: "./assets/images/alcancias/BOLSA DE DINERO ALCANCIA.png"},
@@ -51,50 +51,30 @@ const PRODUCTS_BY_CATEGORY = {
   ],
 }
 
-
-const categoryAnchors = document.querySelectorAll('.category__anchor');
-const productGrid = document.getElementById('productGrid');
-const hideButton = document.getElementById('hideButton');
-
-
-//click event listeners for the category anchors
-categoryAnchors.forEach(anchor => {
-  anchor.addEventListener('click', (e) => {
-    e.preventDefault();
-    const categoryId = anchor.querySelector('.category__name').id;
-    showProducts(categoryId);
-  });
-});
-
-//function to display the selected category elements
-/* function showProducts(categoryId){
-  const products = PRODUCTS_BY_CATEGORY[categoryId];
-  if (products && products.length > 0){
-    //Clear the existing products
-    productGrid.innerHTML = '';
-
-    //Create the product elements
-    products.forEach(product => {
-      const productElement = document.createElement('div');
-      productElement.classList.add('product');
-      productElement.innerHTML = `
-        <img src="${product.img}" alt="${product.name}" class="product__img" />
-        <div class="product__info">
-          <h3 class="product__name">${product.name}</h3>
-        </div>
-      `;
-      productGrid.appendChild(productElement);
-    });
-
-    //Show the product grid
-    productGrid.style.display = 'block';
-  } else {
-    //Hide the product grid
-    productGrid.style.display = 'none';
-  }
-}; */
-hideButton.addEventListener('click', () => {
-  // Clear product grid and hide it
-  productGrid.innerHTML = '';
-  productGrid.style.display = 'none';
-});
+export const COLORS = {
+  normal: [
+    "BLANCO",
+    "NEGRO",
+    "AZUL PRIMARIO",
+    "ROJO PRIMARIO",
+    "AMARILLO PRIMARIO",
+    "AMARILLO LIMÓN",
+    "MARRÓN PELUCHE",
+    "VERDE MANZANA",
+    "FUCSIA",
+    "VERDE TURQUESA",
+    "PIEL",
+    "GRIS HUMO",
+    "VIOLETA INTENSO",
+    "AZUL SEDA",
+    "CARAMELO",
+    "VERDE OLIVA",
+    "CARBÓN CENIZA",
+  ],
+  neon: [
+    "MAGENTA NEON",
+    "NARANJA NEON",
+    "VERDE NEON",
+    "AMARILLO NEON",
+  ]
+}
