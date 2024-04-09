@@ -11,7 +11,7 @@ const PRODUCTS_BY_CATEGORY = {
       {name: "Alas Portavela", img: "./assets/images/esenciales/ALAS PORTA VELA.JPG"},
       {name: "Calavera con Hacha", img: "./assets/images/esenciales/CALAVERA CON HACHA.JPG"},
       {name: "Corazón", img: "./assets/images/esenciales/CORAZON.JPG"},
-      {name: "Goku", img: "./assets/images/osos/assets/images/esenciales/GOKU.jpg"},
+      {name: "Goku", img: "./assets/images/esenciales/GOKU.jpg"},
       {name: "Perro Globo", img: "./assets/images/esenciales/PERRO GLOBO.JPG"},
       {name: "Taza de te con plato", img: "./assets/images/esenciales/TAZA DE TE CON PLATO.JPG"},
   ],
@@ -55,6 +55,7 @@ const PRODUCTS_BY_CATEGORY = {
 const categoryAnchors = document.querySelectorAll('.category__anchor');
 const productGrid = document.getElementById('productGrid');
 const hideButton = document.getElementById('hideButton');
+let displayHideButton = false;
 
 
 //click event listeners for the category anchors
@@ -67,7 +68,7 @@ categoryAnchors.forEach(anchor => {
 });
 
 //function to display the selected category elements
-/* function showProducts(categoryId){
+function showProducts(categoryId){
   const products = PRODUCTS_BY_CATEGORY[categoryId];
   if (products && products.length > 0){
     //Clear the existing products
@@ -80,10 +81,11 @@ categoryAnchors.forEach(anchor => {
       productElement.innerHTML = `
         <img src="${product.img}" alt="${product.name}" class="product__img" />
         <div class="product__info">
-          <h3 class="product__name">${product.name}</h3>
+          <h3 class="product__info__name">${product.name}</h3>
         </div>
       `;
       productGrid.appendChild(productElement);
+      displayHideButton = true;
     });
 
     //Show the product grid
@@ -92,9 +94,11 @@ categoryAnchors.forEach(anchor => {
     //Hide the product grid
     productGrid.style.display = 'none';
   }
-}; */
+};
+hideButton.style.display = !displayHideButton ? 'none' : 'block';
 hideButton.addEventListener('click', () => {
   // Clear product grid and hide it
   productGrid.innerHTML = '';
   productGrid.style.display = 'none';
+  displayHideButton = false;
 });
